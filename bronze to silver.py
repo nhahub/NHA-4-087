@@ -1,11 +1,9 @@
-# Databricks notebook source
 import os
 import pandas as pd
 import glob
 
 print("--- Loading Bronze Data using Pandas (Python Mode) ---")
 
-# المسار بتاعك
 base = "/Volumes/depiworkspace/default/telecom_data"
 print(f"Base exists: {os.path.exists(base)}")
 if os.path.exists(base):
@@ -13,7 +11,6 @@ if os.path.exists(base):
     for item in os.listdir(base):
         print(f"  📁 {item}")
 
-# دالة صغيرة لتقرأ أي ملف CSV جوه الفولدر بـ Pandas
 def load_csv_pandas(file_name):
     path = os.path.join(base, file_name)
     if os.path.exists(path):
@@ -23,7 +20,6 @@ def load_csv_pandas(file_name):
         print(f"Warning: No csv found:{file_name}")
         return None
 
-# قراءة الـ 8 جداول في ثواني
 pd_cust = load_csv_pandas("Customer.csv")
 pd_pay = load_csv_pandas("Payments.csv")
 pd_calls = load_csv_pandas("Calls.csv")
@@ -35,7 +31,6 @@ pd_mobile = load_csv_pandas("Mobile_App.csv")
 
 
 
-# COMMAND ----------
 
 print("--- RUNNING GLOBAL EDA (PANDAS MODE) ---")
 
@@ -61,7 +56,6 @@ for name, df in all_pandas_dfs.items():
         else:
             print("No NULL values found in this table.")
 
-# COMMAND ----------
 
 print("showing data types and info for all raw tables")
 
@@ -85,7 +79,6 @@ for name, df in raw_dfs.items():
         print("="*40)
         df.info()
 
-# COMMAND ----------
 
 print("--- CLEANING: CUSTOMER TABLE ---")
 
@@ -127,7 +120,6 @@ for date_col in ["STATUS_DATE", "BIRTHDATE", "ACTIVATION_DATE"]:
 
 print(f"DONE: Customer Cleaned. Final Rows: {len(pd_cust_clean)}")
 
-# COMMAND ----------
 
 print("--- CLEANING: PAYMENTS TABLE ---")
 
@@ -241,7 +233,6 @@ for c in loyalty_object_cols:
 
 print("DONE: Consumption & Loyalty Cleaned successfully.")
 
-# COMMAND ----------
 
 print("--- CLEANING: NETWORK ELEMENTS TABLE ---")
 
@@ -266,7 +257,6 @@ for c in possible_net_cols:
 
 print(f"DONE: Network Elements Cleaned. Final Rows: {len(pd_net_clean)}")
 
-# COMMAND ----------
 
 print("--- CLEANING: MOBILE APP TABLE ---")
 
@@ -299,7 +289,6 @@ for num_col in ["PRICE", "SPEED", "QUOTA"]:
 
 print(f"DONE: Mobile App Cleaned. Final Rows: {len(pd_mobile_clean)}")
 
-# COMMAND ----------
 
 print("showing data types and info for all cleaned tables")
 
@@ -324,7 +313,6 @@ for name, df in final_cleaned_dfs.items():
         # Using buf=None and capturing or directly printing info
         df.info()
 
-# COMMAND ----------
 
 print("final quality check ")
 
@@ -347,7 +335,6 @@ for name, df in final_cleaned_dfs.items():
 if all_clear:
     print("\nVERIFICATION COMPLETE: All tables are 100% clean and ready for the next layer.")
 
-# COMMAND ----------
 
 print("--- FINAL PREVIEW AND SCHEMA CHECK FOR ALL TABLES ---")
 
@@ -373,26 +360,14 @@ for name, df in final_cleaned_dfs.items():
         available_cols = df.columns[:4]
         print(df[available_cols].head(5))
 
-# COMMAND ----------
 
 print("\nCustomer table check")
 
-# 1. CUSTOMER TABLE
 print("\n" + "="*20 + " 1. CUSTOMER TABLE " + "="*20)
 print("Schema (Data Types):")
 print(pd_cust_clean.dtypes)
 print("\nPreview (First 5 Rows):")
 print(pd_cust_clean[["CUSTOMER_ID#", "SUBSCRIBER_ID#", "ACTIVATION_DATE", "BIRTHDATE"]].head(5))
-
-# COMMAND ----------
-
-# شوف الـ catalogs المتاحة
-spark.sql("SHOW CATALOGS").show()
-
-# شوف الـ schemas
-spark.sql("SHOW SCHEMAS IN depiworkspace").show()
-
-# COMMAND ----------
 
 spark.createDataFrame(pd_cust_clean).write.mode("overwrite").saveAsTable("depiworkspace.default.customer_clean")
 spark.createDataFrame(pd_pay_clean).write.mode("overwrite").saveAsTable("depiworkspace.default.payments_clean")
