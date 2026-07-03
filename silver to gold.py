@@ -17,11 +17,9 @@ df_loyalty   = spark.read.table("depiworkspace.default.loyalty_clean")
 print("Customers:", df_customers.count())
 print("Payments:", df_payments.count())
 
-# COMMAND ----------
 
 display(df_customers.groupBy("SUBSCRIBER_STATUS").count())
 
-# COMMAND ----------
 
 from pyspark.sql import functions as F
 from pyspark.sql.functions import col, when, datediff, current_date, floor
@@ -43,13 +41,11 @@ display(df_customers.shape)
 display(df_customers.head())
 
 
-# COMMAND ----------
 
 print("Shape:", df_customers.count(), len(df_customers.columns))
 print("Columns:", df_customers.columns)
 display(df_customers.describe())
 
-# COMMAND ----------
 
 from pyspark.sql.functions import sum, avg, count
 
@@ -66,7 +62,6 @@ df_payments_agg = df_payments.groupBy("SUBSCRIBER_ID#").agg(
 
 display(df_payments_agg)
 
-# COMMAND ----------
 
 from pyspark.sql.functions import sum, avg, count, max, min
 
@@ -97,7 +92,6 @@ display(df_calls_agg.limit(5))
 display(df_cons_agg.limit(5))
 display(df_mobile_agg.limit(5))
 
-# COMMAND ----------
 
 
 df_customers_spark = spark.createDataFrame(df_customers)
@@ -124,7 +118,6 @@ print("Gold Rows:", df_gold.count())
 print("Gold Columns:", len(df_gold.columns))
 display(df_gold.limit(5))
 
-# COMMAND ----------
 
 df_gold.write.mode("overwrite").saveAsTable("depiworkspace.default.gold_telecom")
 print("Gold Table Saved!")
