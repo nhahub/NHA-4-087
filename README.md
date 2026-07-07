@@ -91,7 +91,7 @@ NHA-4-087/
 
 ## 📊 Data Sources
 
-Eight raw operational tables feed the pipeline: **Customer, Payments, Calls, Consumption, Consumption Rating-Group Lookup, Network Elements, Mobile App activity,** and **Loyalty Points Configuration**. Samples for each are provided under [`bronze_samples/`](bronze_samples/).
+Eight raw operational tables feed the pipeline: **Customer, Payments, Calls, Consumption, Consumption Rating-Group Lookup, Network Elements, Mobile App activity,** and **Loyalty Points Configuration**. Samples for each are provided under [`bronze_samples/`]([bronze_samples/](https://drive.google.com/drive/folders/1lShVj-sjA-i1eIJzwZx3-3xs3rUE57oW?usp=sharing)).
 
 ## 🏗️ Data Warehouse (Star Schema)
 
@@ -103,7 +103,7 @@ Eight raw operational tables feed the pipeline: **Customer, Payments, Calls, Con
 | `dim_plan` | Dimension | 1 row per subscription plan |
 | `fact_telecom` | Fact | 1 row per customer, with revenue, usage & churn metrics |
 
-Full DDL, keys, and quality fixes: [`Data Warehouse/Telecom_DW.sql`](<Data Warehouse/Telecom_DW.sql>). Diagram: `Data Warehouse/Screenshot ....png`.
+Full DDL, keys, and quality fixes: [`Data Warehouse/Telecom_DW.sql`]([<Data Warehouse/Telecom_DW.sql>](https://drive.google.com/drive/folders/1EsoNBv6jhmQgZcqbxDjKlzkasB-nWte9?usp=sharing)). Diagram: `Data Warehouse/Screenshot ....png`.
 
 ## 🤖 Churn Model
 
