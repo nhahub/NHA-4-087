@@ -11,7 +11,11 @@ End-to-end data engineering & analytics project for a telecom operator: raw oper
 
 _🚧 Demo video/GIF coming soon — will be added here._
 
-<!-- Once ready, replace with something like:
+<!-- Once rea
+
+https://github.com/user-attachments/assets/23e278dd-2e05-43f0-8f11-c2da43a60205
+
+dy, replace with something like:
 [![Watch the demo](assets/powerbi_dashboard.jpeg)](https://your-demo-link-here)
 
 -->
