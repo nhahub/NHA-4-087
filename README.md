@@ -13,13 +13,14 @@ _🚧 Demo video/GIF coming soon — will be added here._
 
 <!-- Once ready, replace with something like:
 [![Watch the demo](assets/powerbi_dashboard.jpeg)](https://your-demo-link-here)
+
 -->
 
 ## 🖼️ Dashboard Preview
 
-![Power BI Dashboard](assets/powerbi_dashboard.jpeg)
+![Power BI Dashboard]([assets/powerbi_dashboard.jpeg](https://drive.google.com/file/d/16dbDtePzI-QLYRmbHT58p-nODEIqRCcz/view?usp=sharing))
 
-Full breakdown of every visual: see [`docs/POWER_BI.md`](docs/POWER_BI.md).
+Full breakdown of every visual: see [`docs/POWER_BI.md`]([docs/POWER_BI.md](https://drive.google.com/file/d/16dbDtePzI-QLYRmbHT58p-nODEIqRCcz/view?usp=sharing)).
 
 ---
 
@@ -117,7 +118,7 @@ Details and results: [`docs/DOCUMENTATION.md`](docs/DOCUMENTATION.md#-machine-le
 
 ## 📈 Power BI Dashboard
 
-The dashboard gives an executive view of the customer base: KPIs (customer count, total rent, average tenure, total revenue), demographic breakdowns (gender, customer class, customer type), geographic distribution by governorate and map, and a churn-rate gauge. See the full page-by-page walkthrough in [`docs/POWER_BI.md`](docs/POWER_BI.md).
+The dashboard gives an executive view of the customer base: KPIs (customer count, total rent, average tenure, total revenue), demographic breakdowns (gender, customer class, customer type), geographic distribution by governorate and map, and a churn-rate gauge. See the full page-by-page walkthrough in [`docs/POWER_BI.md`]([docs/POWER_BI.md](https://drive.google.com/file/d/16dbDtePzI-QLYRmbHT58p-nODEIqRCcz/view?usp=sharing)).
 
 ## ▶️ How to Reproduce
 
