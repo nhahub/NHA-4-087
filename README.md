@@ -24,8 +24,6 @@ dy, replace with something like:
 
 ![Power BI Dashboard](https://github.com/nhahub/NHA-4-087/blob/main/PowerBi.pdf)
 
-Full breakdown of every visual: see [`docs/POWER_BI.md`]([docs/POWER_BI.md]([https://drive.google.com/file/d/16dbDtePzI-QLYRmbHT58p-nODEIqRCcz/view?usp=sharing](https://github.com/nhahub/NHA-4-087/edit/main/README.md)](https://github.com/nhahub/NHA-4-087/tree/main/Telecom.pbix)).
-
 ---
 
 ## 🧱 Project Architecture
