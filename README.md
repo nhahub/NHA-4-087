@@ -1,4 +1,3 @@
-# NHA-4-87
 # 📡 Telecom Customer Analytics & Churn Prediction
 
 End-to-end data engineering & analytics project for a telecom operator: raw operational data is ingested, cleaned through a **Bronze → Silver → Gold (medallion)** pipeline on **Azure Databricks**, modeled into a **star-schema data warehouse**, used to train a **churn prediction model** (PySpark ML), and finally visualized in an interactive **Power BI** dashboard.
@@ -11,10 +10,19 @@ End-to-end data engineering & analytics project for a telecom operator: raw oper
 
 https://github.com/user-attachments/assets/23e278dd-2e05-43f0-8f11-c2da43a60205
 
-
 ## 🖼️ Dashboard Preview
 
-![Power BI Dashboard](https://github.com/nhahub/NHA-4-087/blob/main/PowerBi.pdf)
+**Executive Overview**
+![Executive Overview](assets/executive_overview.png)
+
+**Usage & Segmentation Detail**
+![Usage & Segmentation](assets/usage_segmentation.png)
+
+**Geographic Distribution**
+![Geographic Distribution](assets/distribution_map.png)
+
+> Full dashboard walkthrough: see the [Telco Vista Documentation (PDF)](<https://github.com/nhahub/NHA-4-087/blob/main/Telco_Vista_Documentation%20(2).pdf>), Section 11.
+> Dashboard file: [`Telecom.pbix`](https://github.com/nhahub/NHA-4-087/tree/main/Telecom.pbix)
 
 ---
 
@@ -39,7 +47,7 @@ Raw CSV files (8 source tables)
         └──►  Power BI                         ──►  Executive dashboard (see screenshot above)
 ```
 
-For the full technical write-up (data dictionary, DW schema, ML methodology, Power BI details) see [**`docs/DOCUMENTATION.md`**](docs/DOCUMENTATION.md).
+For the full technical write-up (data dictionary, DW schema, ML methodology, Power BI details) see [**Telco Vista Documentation (PDF)**](<https://github.com/nhahub/NHA-4-087/blob/main/Telco_Vista_Documentation%20(2).pdf>).
 
 ---
 
@@ -63,9 +71,8 @@ NHA-4-087/
 │   ├── Telecom_DW.sql              # Star schema DDL (dims + fact) + constraints + data quality fixes
 │   └── Screenshot ....png          # Entity-relationship diagram
 ├── Model.py                        # PySpark churn prediction (Logistic Regression + grid search)
-├── docs/
-│   ├── DOCUMENTATION.md            # Full technical documentation
-│   └── POWER_BI.md                 # Power BI dashboard documentation
+├── Telecom.pbix                    # Power BI dashboard file
+├── Telco_Vista_Documentation (2).pdf  # Full technical documentation
 └── README.md
 ```
 
@@ -86,7 +93,9 @@ NHA-4-087/
 
 ## 📊 Data Sources
 
-Eight raw operational tables feed the pipeline: **Customer, Payments, Calls, Consumption, Consumption Rating-Group Lookup, Network Elements, Mobile App activity,** and **Loyalty Points Configuration**. Samples for each are provided under [`bronze_samples/`]([bronze_samples/](https://drive.google.com/drive/folders/1lShVj-sjA-i1eIJzwZx3-3xs3rUE57oW?usp=sharing)).
+Eight raw operational tables feed the pipeline: **Customer, Payments, Calls, Consumption, Consumption Rating-Group Lookup, Network Elements, Mobile App activity,** and **Loyalty Points Configuration**. Samples for each are provided under [`bronze_samples/`](bronze_samples/).
+
+> Browse samples directly: [`bronze_samples/`](https://github.com/nhahub/NHA-4-087/tree/main/bronze_samples)
 
 ## 🏗️ Data Warehouse (Star Schema)
 
@@ -98,7 +107,9 @@ Eight raw operational tables feed the pipeline: **Customer, Payments, Calls, Con
 | `dim_plan` | Dimension | 1 row per subscription plan |
 | `fact_telecom` | Fact | 1 row per customer, with revenue, usage & churn metrics |
 
-Full DDL, keys, and quality fixes: [`Data Warehouse/Telecom_DW.sql`]([<Data Warehouse/Telecom_DW.sql>](https://drive.google.com/drive/folders/1EsoNBv6jhmQgZcqbxDjKlzkasB-nWte9?usp=sharing)). Diagram: `Data Warehouse/Screenshot ....png`.
+Full DDL, keys, and quality fixes: [`Data Warehouse/Telecom_DW.sql`](Data%20Warehouse/Telecom_DW.sql). Diagram: `Data Warehouse/Screenshot ....png`.
+
+> Power BI file: [`Telecom.pbix`](https://github.com/nhahub/NHA-4-087/tree/main/Telecom.pbix)
 
 ## 🤖 Churn Model
 
@@ -108,11 +119,13 @@ A **Logistic Regression** model (PySpark MLlib) predicts customer churn from the
 - Class-weighting to correct for churn label imbalance
 - Grid search over regularization (`regParam`, `elasticNetParam`), evaluated with **ROC-AUC**, **accuracy**, **precision**, **recall**, **F1**
 
-Details and results: [`docs/DOCUMENTATION.md`](docs/DOCUMENTATION.md#-machine-learning-model).
+Details and results: see the [Telco Vista Documentation (PDF)](<https://github.com/nhahub/NHA-4-087/blob/main/Telco_Vista_Documentation%20(2).pdf>), Section 10.
 
 ## 📈 Power BI Dashboard
 
-The dashboard gives an executive view of the customer base: KPIs (customer count, total rent, average tenure, total revenue), demographic breakdowns (gender, customer class, customer type), geographic distribution by governorate and map, and a churn-rate gauge. See the full page-by-page walkthrough in [`docs/POWER_BI.md`]([docs/POWER_BI.md](https://drive.google.com/file/d/16dbDtePzI-QLYRmbHT58p-nODEIqRCcz/view?usp=sharing)).
+The dashboard gives an executive view of the customer base: KPIs (customer count, total rent, average tenure, total revenue), demographic breakdowns (gender, customer class, customer type), geographic distribution by governorate and map, and a churn-rate gauge. See the full page-by-page walkthrough in the [Telco Vista Documentation (PDF)](<https://github.com/nhahub/NHA-4-087/blob/main/Telco_Vista_Documentation%20(2).pdf>), Section 11.
+
+> Dashboard file: [`Telecom.pbix`](https://github.com/nhahub/NHA-4-087/tree/main/Telecom.pbix)
 
 ## ▶️ How to Reproduce
 
