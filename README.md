@@ -129,11 +129,14 @@ The dashboard gives an executive view of the customer base: KPIs (customer count
 6. Run `Model.py` to train/evaluate the churn model on `gold_telecom`.
 7. Connect Power BI to the Azure Databricks warehouse (or `gold_telecom`) and refresh the dashboard.
 
-## 👥 Team / Credits
-أ
+👥 Team / Credits
+
+
 Habiba Hussam
-kholod khald
+Kholod Khaled
 Rowan Ali
 Haya Tarek
 Shahd Assem
+
+
 Project developed as part of the DEPI Data Engineering track.
