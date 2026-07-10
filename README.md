@@ -132,11 +132,11 @@ The dashboard gives an executive view of the customer base: KPIs (customer count
 👥 Team / Credits
 
 
-Habiba Hussam
-Kholod Khaled
-Rowan Ali
-Haya Tarek
-Shahd Assem
+- Habiba Hussam
+- Kholod Khaled
+- Rowan Ali
+- Haya Tarek
+- Shahd Assem
 
 
 Project developed as part of the DEPI Data Engineering track.
