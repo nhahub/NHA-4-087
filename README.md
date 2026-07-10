@@ -130,5 +130,10 @@ The dashboard gives an executive view of the customer base: KPIs (customer count
 7. Connect Power BI to the Azure Databricks warehouse (or `gold_telecom`) and refresh the dashboard.
 
 ## 👥 Team / Credits
-
+أ
+Habiba Hussam
+kholod khald
+Rowan Ali
+Haya Tarek
+Shahd Assem
 Project developed as part of the DEPI Data Engineering track.
