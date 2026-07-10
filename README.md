@@ -11,15 +11,7 @@ End-to-end data engineering & analytics project for a telecom operator: raw oper
 https://github.com/user-attachments/assets/23e278dd-2e05-43f0-8f11-c2da43a60205
 
 ## 🖼️ Dashboard Preview
-
-**Executive Overview**
-![Executive Overview](assets/executive_overview.png)
-
-**Usage & Segmentation Detail**
-![Usage & Segmentation](assets/usage_segmentation.png)
-
-**Geographic Distribution**
-![Geographic Distribution](assets/distribution_map.png)
+![Power BI Dashboard](https://github.com/nhahub/NHA-4-087/blob/main/PowerBi.pdf) 
 
 > Full dashboard walkthrough: see the [Telco Vista Documentation (PDF)](<https://github.com/nhahub/NHA-4-087/blob/main/Telco_Vista_Documentation%20(2).pdf>), Section 11.
 > Dashboard file: [`Telecom.pbix`](https://github.com/nhahub/NHA-4-087/tree/main/Telecom.pbix)
